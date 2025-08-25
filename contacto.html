@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Hermanos Jota</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <img src="img/logo.svg" alt="Logo Hermanos Jota" class="logo">
+      <h1>Hermanos Jota</h1>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Colección</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="carrito">
+      🛒 <span id="contador">0</span>
+    </div>
+  </header>
+
+  <!-- HERO DE CONTACTO -->
+  <section class="hero-contacto">
+    <h2>Conectá con Hermanos Jota</h2>
+    <p>Ya sea para visitar nuestro taller, hacer una consulta o compartir tu historia, estamos acá para escucharte.</p>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <main>
+    <section class="formulario-contacto">
+      <h3>Dejanos tu consulta</h3>
+      <form id="form-contacto" novalidate>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+        <p id="respuesta"></p>
+        <button type="submit">Enviar</button>
+        <p id="mensaje-exito" class="exito" style="display:none;">¡Gracias por contactarnos! Te responderemos pronto.</p>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-info">
+      <p><strong>Casa Taller:</strong> Av. San Juan 2847, San Cristóbal, CABA</p>
+      <p><strong>WhatsApp:</strong> +54 11 4567-8900</p>
+      <p><strong>Email:</strong> info@hermanosjota.com.ar</p>
+      <p><strong>Instagram:</strong> @hermanosjota_ba</p>
+    </div>
+    <p class="copyright">© Hermanos Jota — El arte de habitar</p>
+  </footer>
+  <script src="js/contacto.js"></script>
+</body>
+</html>

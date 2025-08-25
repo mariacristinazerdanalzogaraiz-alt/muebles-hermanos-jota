@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermanos Jota — El arte de habitar</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <img src="img/logo.svg" alt="Logo Hermanos Jota" class="logo">
+      <h1>Hermanos Jota</h1>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="productos.html">Colección</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="carrito">
+      🛒 <span id="contador">0</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+   <section class="hero-carrete">
+  <div class="carrete">
+    <img src="Mesa Comedor Pampa.png" alt="Diseño artesanal" class="carrete-img activo">
+    <img src="Sofá Patagonia.png" alt="Materiales nobles" class="carrete-img">
+    <img src="Sillón Copacabana.png" alt="Ambientes cálidos" class="carrete-img">
+  </div>
+  <h2>Redescubrí el arte de habitar</h2>
+  <p>Cada pieza cuenta la historia de manos expertas y materiales nobles.</p>
+</section>
+    
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="destacados">
+      <h2>Selección destacada</h2>
+      <p class="intro">Diseños que evocan el optimismo de los años 60 con la conciencia del presente. Elegí tu próxima historia.</p>
+      <div id="productos-destacados" class="productos-grid">
+        <!-- Productos cargados por JS -->
+      </div>
+    </section>
+
+    <!-- NTABILIDAD -->
+    <section class="ntabilidad">
+      <h2>Compromiso con el futuro</h2>
+      <p>Desde maderas nativas certificadas hasta acabados naturales, cada decisión honra el planeta y a quienes lo habitan.</p>
+      <ul>
+        <li>Madera FSC: algarrobo, quebracho, caldén</li>
+        <li>Acabados sin COV: aceite de lino, cera de abejas</li>
+        <li>Recompra garantizada y restauración</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-info">
+      <p><strong>Casa Taller:</strong> Av. San Juan 2847, San Cristóbal, CABA</p>
+      <p><strong>WhatsApp:</strong> +54 11 4567-8900</p>
+      <p><strong>Email:</strong> info@hermanosjota.com.ar</p>
+      <p><strong>Instagram:</strong> @hermanosjota_ba</p>
+    </div>
+    <p class="copyright">© Hermanos Jota — El arte de habitar</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/carrete.js"></script>
+</body>
+</html>
