@@ -22,7 +22,7 @@ function mostrarDestacados(productos) {
       <p>${producto.descripcion}</p>
       <p class="precio">$${producto.precio.toLocaleString()}</p>
       <button class="agregar-carrito">Agregar al carrito</button>
-      <a href="detalle.html?id=${producto.id}" class="ver-mas">Ver más</a>
+      <a href="detalle.js?id=${producto.id}" class="ver-mas">Ver más</a>
     `;
     contenedor.appendChild(card);
 

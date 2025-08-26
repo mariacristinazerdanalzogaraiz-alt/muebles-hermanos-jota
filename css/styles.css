@@ -42,26 +42,26 @@ p {
 ------------------------------ */
 header {
   background-color: var(--verde-salvia);
-  padding: 1em 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 1em 5vw;
   border-bottom: 2px solid var(--siena-tostado);
 }
 
 .header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1em;
+}
+
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
 }
 
 .logo {
-  width: 60px;
+  max-height: 70px;
+  width: auto;
   height: auto;
-}
-
-nav {
-  margin-top: 1em;
 }
 
 .nav-list {
@@ -69,6 +69,7 @@ nav {
   display: flex;
   gap: 1.5em;
   padding: 0;
+  margin: 0;
 }
 
 .nav-list a {
@@ -130,7 +131,7 @@ nav {
 /* ------------------------------
    FILTROS
 ------------------------------ */
-.filtros {
+.filtro {
   padding: 2em;
   text-align: center;
 }
@@ -186,27 +187,29 @@ footer {
    HERO CARRETE
 ------------------------------ */
 .hero-carrete {
-  position: relative;
   text-align: center;
-  padding: 2em;
+  padding: 2em 5em;
   background-color: var(--gris-suave);
 }
 
 .carrete {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  height: 60vh;
   overflow: hidden;
-  border-radius: 8px;  
+  border-radius: 8px;
 }
 
 .carrete-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   display: none;
-  transition: opacity 0.5s ease-in-out;
-
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
 }
 
 .carrete-img.activo {
@@ -215,8 +218,8 @@ footer {
 }
 
 .hero-carrete h2 {
-  margin-top: 1em;
-  font-size: 1.8em;
+  margin-top: 1.5em;
+  font-size: 2em;
   color: var(--siena-tostado);
 }
 
@@ -226,6 +229,7 @@ footer {
   max-width: 700px;
   margin: 1em auto 0;
 }
+
 
 /* ------------------------------
    CARRITO
@@ -244,4 +248,79 @@ footer {
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
+}
+
+/* ------------------------------
+   BOTONES?
+------------------------------ */
+.nav-list a {
+  text-decoration: none;
+  color: var(--siena-tostado);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--siena-tostado);
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: var(--siena-tostado);
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+.nav-list a.activo::after {
+  width: 100%;
+}
+
+/* ------------------------------
+   VER MAS
+------------------------------ */
+
+.detalle-producto {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em;
+  background-color: var(--gris-suave);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.detalle-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.detalle-info {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 1em auto;
+  max-width: 600px;
+}
+
+.detalle-info li {
+  margin-bottom: 0.5em;
+}
+
+.agregar-carrito {
+  background-color: var(--siena-tostado);
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
 }

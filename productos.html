@@ -14,26 +14,24 @@
 <body>
 
   <!-- HEADER -->
-  <header>
-    <div class="header-container">
-      <img src="img/logo.svg" alt="Logo Hermanos Jota" class="logo"/>
+<header>
+  <div class="header-container">
+    <div class="logo-titulo">
+      <img src="img/logo.svg" alt="Logo Hermanos Jota" class="logo">
       <h1>Hermanos Jota</h1>
     </div>
 
-    <nav>
+    <nav class="nav-principal">
       <ul class="nav-list">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="productos.html" class="activo">Colección</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="productos.html"class="activo">Colección</a></li>
+        <li><a href="contacto.html" >Contacto</a></li>
         <li><a href="carrito.html">Carrito 🛒 <span id="contador">0</span></a></li>
-
       </ul>
     </nav>
+  </div>
+</header>
 
-    <div class="carrito">
-      🛒 <span id="contador">0</span>
-    </div>
-  </header>
 
   <!-- HERO -->
   <section class="hero-coleccion">
@@ -41,17 +39,16 @@
     <p>Diseños que celebran la calidez, la funcionalidad y la belleza atemporal. Cada pieza está pensada para acompañarte toda la vida.</p>
   </section>
 
-  <!-- FILTROS -->
-  <section class="filtros">
+  <!-- FILTRO -->
+  <section class="filtro">
     <h3>Filtrar por categoría</h3>
     <ul class="filtro-lista">
       <li><button data-categoria="todos">Todos</button></li>
-      <li><button data-categoria="sillas">Sillas</button></li>
+      <li><button data-categoria="asientos">Asientos</button></li>
       <li><button data-categoria="mesas">Mesas</button></li>
       <li><button data-categoria="almacenamiento">Almacenamiento</button></li>
     </ul>
-     <!-- Contenedor dinámico de productos -->
-  <div id="productos"></div>
+
   </section>
 
   <!-- BUSCADOR (bonus consigna) -->
@@ -81,6 +78,6 @@
 
   <!-- SCRIPTS -->
   <script src="js/productos.js"></script>
-  <script src="js/filtros.js"></script>
+  <script src="js/filtro.js"></script>
 </body>
 </html>

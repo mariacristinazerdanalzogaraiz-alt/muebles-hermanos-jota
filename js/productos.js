@@ -27,7 +27,7 @@ window.productos = [
   {
     id: 3,
     nombre: "Butaca Mendoza",
-    categoria: "almacenamiento",
+    categoria: "asientos",
     precio: 90000,
     imagen: "img/Butaca Mendoza.png",
     descripcion: "Butaca modular con estructura de madera y cojines ajustables, ideal para espacios modernos y funcionales.",
@@ -82,7 +82,7 @@ window.productos = [
   {
     id: 8,
     nombre: "Silla de Trabajo Belgrano",
-    categoria: "sillas",
+    categoria: "asientos",
     precio: 35000,
     imagen: "img/Silla de Trabajo Belgrano.png",
     descripcion: "Silla ergonómica regulable en altura con respaldo de malla transpirable y asiento tapizado en tejido reciclado.",
@@ -93,7 +93,7 @@ window.productos = [
   {
     id: 9,
     nombre: "Sillas Córdoba",
-    categoria: "sillas",
+    categoria: "asientos",
     precio: 50000,
     imagen: "img/Sillas Córdoba.png",
     descripcion: "Set de cuatro sillas apilables en contrachapado moldeado de nogal y estructura tubular pintada en Sage Green.",
@@ -104,7 +104,7 @@ window.productos = [
   {
     id: 10,
     nombre: "Sillón Copacabana",
-    categoria: "sillas",
+    categoria: "asientos",
     precio: 110000,
     imagen: "img/Sillón Copacabana.png",
     descripcion: "Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna. Inspirado en la estética brasilera moderna de los 60.",
@@ -115,7 +115,7 @@ window.productos = [
   {
     id: 11,
     nombre: "Sofá Patagonia",
-    categoria: "sillas",
+    categoria: "asientos",
     precio: 150000,
     imagen: "img/Sofá Patagonia.png",
     descripcion: "Sofá de tres cuerpos tapizado en lino Warm Alabaster con patas cónicas de madera. Comodidad duradera y sostenible.",
