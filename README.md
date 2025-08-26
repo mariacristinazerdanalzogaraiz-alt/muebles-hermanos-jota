@@ -1,56 +1,66 @@
 # muebles-hermanos-jota
-Hermanos Jota — El arte de habitar Sprint 1 y 2 — Proyecto NEXUS ITBA — Full Stack Developer Entrega grupal
 
-Consigna final Diseñar y desarrollar un sitio web estático que represente la identidad visual y emocional de una marca ficticia. El sitio debe incluir navegación entre secciones, catálogo de productos, detalle individual, formulario de contacto y coherencia estética con un manual de marca.
+**Sprint 1 y 2 — Proyecto NEXUS**  
+ITBA — Full Stack Developer  
+Entrega grupal
 
-Enlaces
+---
 
-Repositorio con el código fuente: https://github.com/mariacristinazerdanalzogaraiz-alt/hermanos-jota
+## 🧩 Consigna final
 
-Sitio web desplegado en GitHub Pages: https://mariacristinazerdanalzogaraiz-alt.github.io/hermanos-jota/
+Diseñar y desarrollar un sitio web estático que represente la identidad visual y emocional de una marca ficticia. El sitio debe incluir navegación entre secciones, catálogo de productos, detalle individual, formulario de contacto y coherencia estética con un manual de marca.
 
-Funcionalidad implementada
+---
 
-Navegación entre secciones: Inicio, Colección, Sustentabilidad, Contacto
+## 🌐 Enlaces
 
-Filtro por categorías en la colección
+- 🔗 Repositorio con el código fuente:  
+  [https://github.com/mariacristinazerdanalzogaraiz-alt/muebles-hermanos-jota](https://github.com/mariacristinazerdanalzogaraiz-alt/muebles-hermanos-jota)
 
-Detalle dinámico de cada producto con URL por ID
+- 🌍 Sitio web desplegado en GitHub Pages:  
+  [https://mariacristinazerdanalzogaraiz-alt.github.io/muebles-hermanos-jota/](https://mariacristinazerdanalzogaraiz-alt.github.io/muebles-hermanos-jota/)
 
-Carrito funcional con almacenamiento en localStorage
+---
 
-Formulario de contacto con validación
+## 🧠 Funcionalidad implementada
 
-Estética coherente con el manual de marca (tipografía, paleta, voz)
+- Navegación entre secciones: Inicio, Colección, Sustentabilidad, Contacto  
+- Filtro por categorías en la colección  
+- Detalle dinámico de cada producto con URL por ID  
+- Carrito funcional con almacenamiento en `localStorage`  
+- Formulario de contacto con validación  
+- Estética coherente con el manual de marca (tipografía, paleta, voz)  
+- Hero dinámico con imágenes rotativas
 
-Hero dinámico con imágenes rotativas
+---
 
-Tecnologías utilizadas
+## ⚙️ Tecnologías utilizadas
 
-HTML5 semántico
+- HTML5 semántico  
+- CSS3 con variables y diseño responsive  
+- JavaScript (DOM, eventos, localStorage)  
+- Git y GitHub para control de versiones  
+- GitHub Pages para hosting estático  
+- Google Fonts (Inter, Playfair Display)
 
-CSS3 con variables y diseño responsive
+---
 
-JavaScript (DOM, eventos, localStorage)
+## 👩‍💻 Integrantes del equipo
 
-Git y GitHub para control de versiones
+- Tiziano Daniel Silvestri — [https://github.com/Shinninng](https://github.com/Shinninng)  
+- Zerdan Alzogaraiz Maria Cristina — [https://github.com/mariacristinazerdanalzogaraiz-alt](https://github.com/mariacristinazerdanalzogaraiz-alt)  
+- Sarli Ochat, Melina — [https://github.com/meliochat](https://github.com/meliochat)  
+- Sayegh Maxima — [https://github.com/Maxisayegh23](https://github.com/Maxisayegh23)  
+- Leonardo Figueroa — [https://github.com/leo-igtm](https://github.com/leo-igtm)
 
-GitHub Pages para hosting estático
+---
 
-Google Fonts (Inter, Playfair Display)
+## 📜 Historial de commits
 
-Integrantes del equipo
+El repositorio refleja la participación activa de todos los integrantes, con commits distribuidos por secciones, funcionalidades y correcciones.
 
-Tiziano Daniel Silvestri — https://github.com/Shinninng
+---
 
-Zerdan Alzogaraiz Maria Cristina — https://github.com/mariacristinazerdanalzogaraiz-alt
+## Cierre
 
-Sarli Ochat, Melina — https://github.com/meliochat
-
-Sayegh Maxima — https://github.com/Maxisayegh23
-
-Leonardo Figueroa — https://github.com/leo-igtm
-
-Historial de commits El repositorio refleja la participación activa de todos los integrantes, con commits distribuidos por secciones, funcionalidades y correcciones.
-
-Cierre Este proyecto representa el espíritu de Hermanos Jota: diseño consciente, emocional y funcional. Cada línea de código fue pensada para transmitir esa esencia y para construir una experiencia web clara, cálida y compartible.
+Este proyecto representa el espíritu de Hermanos Jota: diseño consciente, emocional y funcional. Cada línea de código fue pensada para transmitir esa esencia y para construir una experiencia web clara, cálida y compartible.
