@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-contacto");
   const respuesta = document.getElementById("respuesta");
+  const emailDestino = "info@hermanosjota.com.ar"; // Email de destino para las consultas
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // Evita que se recargue la página
@@ -25,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Simulación de envío exitoso
+    console.log(`Simulando envío de correo a: ${emailDestino}`);
+    console.log("Datos del formulario:", { nombre, email, mensaje });
+
     respuesta.textContent = "¡Gracias por tu mensaje! Te responderemos pronto 🤎";
     respuesta.style.color = "green";
 

@@ -1,64 +1,75 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const contenedor = document.getElementById("productos");
-  const botones = document.querySelectorAll(".filtro-lista button");
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof productos === 'undefined' || !document.getElementById('productos')) {
+    console.error("El array 'productos' no está definido o no se encuentra el contenedor de productos.");
+    return;
+  }
 
-  function mostrarProductos(lista) {
-    contenedor.innerHTML = "";
+  const busquedaInput = document.getElementById('busqueda');
+  const productosContainer = document.getElementById('productos');
+  const filtroBotones = document.querySelectorAll('.filtro-lista button');
+
+  let categoriaActual = 'todos';
+  let terminoBusqueda = '';
+
+  // --- FUNCIÓN PARA RENDERIZAR PRODUCTOS ---
+  const renderizarProductos = (lista) => {
+    productosContainer.innerHTML = '';
+    if (lista.length === 0) {
+      productosContainer.innerHTML = '<p class="sin-resultados">No se encontraron productos que coincidan con tu búsqueda.</p>';
+      return;
+    }
     lista.forEach(producto => {
-      const card = document.createElement("div");
-      card.classList.add("producto");
-      card.innerHTML = `
+      const productoDiv = document.createElement('div');
+      productoDiv.classList.add('producto');
+      productoDiv.innerHTML = `
         <img src="${producto.imagen}" alt="${producto.nombre}">
         <h4>${producto.nombre}</h4>
         <p>${producto.descripcion}</p>
-        <p class="precio">$${producto.precio.toLocaleString()}</p>
-        <button class="agregar-carrito">Agregar al carrito</button>
-        <a href="detalle.js?id=${producto.id}" class="ver-mas">Ver más</a>
+        <p class="precio">$${producto.precio}</p>
+        <a href="detalle.html?id=${producto.id}" class="ver-mas">Ver más</a>
+        <button class="agregar-carrito" data-id="${producto.id}">Agregar al carrito</button>
       `;
-      contenedor.appendChild(card);
-
-      // Evento para agregar al carrito
-      const boton = card.querySelector(".agregar-carrito");
-      boton.addEventListener("click", () => {
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        const existe = carrito.find(item => item.id === producto.id);
-
-        if (!existe) {
-          carrito.push({ ...producto, cantidad: 1 });
-        } else {
-          existe.cantidad += 1;
-        }
-
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        actualizarContadorCarrito();
-        alert(`${producto.nombre} fue agregado al carrito 🛒`);
-      });
+      productosContainer.appendChild(productoDiv);
     });
-  }
+  };
 
-  function actualizarContadorCarrito() {
-    const contador = document.getElementById("contador");
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    contador.textContent = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
-  }
+  // --- LÓGICA DE FILTRADO ---
 
-  mostrarProductos(window.productos); // Mostrar todos al inicio
-  actualizarContadorCarrito();
+  const aplicarFiltros = () => {
+    let productosFiltrados = productos;
 
-  botones.forEach(boton => {
-    boton.addEventListener("click", () => {
-      // Resaltar botón activo
-      botones.forEach(b => b.classList.remove("activo"));
-      boton.classList.add("activo");
+    // 1. Filtrar por categoría
+    if (categoriaActual !== 'todos') {
+      productosFiltrados = productosFiltrados.filter(p => p.categoria === categoriaActual);
+    }
 
-      const categoria = boton.getAttribute("data-categoria");
-      if (categoria === "todos") {
-        mostrarProductos(window.productos);
-      } else {
-        const filtrados = window.productos.filter(p => p.categoria === categoria);
-        mostrarProductos(filtrados);
-      }
-      actualizarContadorCarrito();
+    // 2. Filtrar por término de búsqueda
+    if (terminoBusqueda) {
+      productosFiltrados = productosFiltrados.filter(p => p.nombre.toLowerCase().includes(terminoBusqueda));
+    }
+
+    renderizarProductos(productosFiltrados);
+  };
+
+  // --- EVENT LISTENERS ---
+
+  // Listener para el input de búsqueda (se activa con cada letra que se escribe)
+  busquedaInput.addEventListener('input', (e) => {
+    terminoBusqueda = e.target.value.toLowerCase().trim();
+    aplicarFiltros();
+  });
+
+  // Listeners para los botones de categoría
+  filtroBotones.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+      filtroBotones.forEach(b => b.classList.remove('filtro-activo'));
+      e.target.classList.add('filtro-activo');
+      categoriaActual = e.target.dataset.categoria;
+      aplicarFiltros();
     });
   });
+
+  // --- RENDER INICIAL ---
+  document.querySelector('.filtro-lista button[data-categoria="todos"]').classList.add('filtro-activo');
+  renderizarProductos(productos);
 });

@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detalle del producto</title>
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Font Awesome (para íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <!-- HEADER -->
   <header>
     <div class="header-container">
-      <div class="logo-titulo">
+      <a href="index.html" class="logo-titulo">
         <img src="img/logo.svg" alt="Logo Hermanos Jota" class="logo">
         <h1>Hermanos Jota</h1>
-      </div>
+      </a>
 
       <nav class="nav-principal">
         <ul class="nav-list">
@@ -23,6 +29,9 @@
           <li><a href="carrito.html">Carrito 🛒 <span id="contador">0</span></a></li>
         </ul>
       </nav>
+      <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
@@ -33,15 +42,52 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <section class="frase-final">
-      <p>Cada pieza cuenta la historia de manos expertas y materiales nobles.</p>
-    </section>
-  </footer>
+<!-- FOOTER -->
+  <!-- ACTUALIZADO CON ENLACES -->
+    <footer>
+        <div class="footer-info">
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <strong>Casa Taller:</strong> 
+                <a href="https://maps.app.goo.gl/pxztifL1q4ixGANQA" target="_blank" rel="noopener">
+                    Av. San Juan 2847, San Cristóbal, CABA
+                </a>
+            </p>
+            <p>
+                <i class="fab fa-whatsapp"></i>
+                <strong>WhatsApp:</strong> 
+                <a href="https://wa.me/541145678900" target="_blank" rel="noopener">
+                    +54 11 4567-8900
+                </a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <strong>Ventas:</strong> 
+                <a href="mailto:ventas@hermanosjota.com.ar">
+                    ventas@hermanosjota.com.ar
+                </a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <strong>Consultas:</strong> 
+                <a href="mailto:info@hermanosjota.com.ar">
+                    info@hermanosjota.com.ar
+                </a>
+            </p>
+            <p>
+                <i class="fab fa-instagram"></i>
+                <strong>Instagram:</strong> 
+                <a href="https://www.instagram.com/hermanosjota_ba" target="_blank" rel="noopener">
+                    @hermanosjota_ba
+                </a>
+            </p>
+        </div>
+        <p class="copyright">© Hermanos Jota — El arte de habitar</p>
+    </footer>
 
   <!-- SCRIPTS -->
   <script src="js/productos.js"></script>
   <script src="js/detalle.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

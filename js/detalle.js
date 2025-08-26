@@ -18,52 +18,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const contenedor = document.getElementById("detalle");
 
     if (producto && contenedor) {
+      const specsList = [
+        { label: 'Medidas', value: producto.medidas },
+        { label: 'Materiales', value: producto.materiales },
+        { label: 'Acabado', value: producto.acabado },
+        { label: 'Peso', value: producto.peso },
+        { label: 'Capacidad', value: producto.capacidad },
+        { label: 'Categoría', value: producto.categoria }
+      ]
+      .filter(spec => spec.value) // Filtrar especificaciones sin valor
+      .map(spec => `<li><strong>${spec.label}:</strong> ${spec.value}</li>`)
+      .join('');
+
       contenedor.innerHTML = `
-        <img src="${producto.imagen}" alt="${producto.nombre}" class="detalle-img"/>
-        <div class="detalle-info">
-          <h2>${producto.nombre}</h2>
-          <p class="descripcion">${producto.descripcion}</p>
-          <ul>
-            <li><strong>Medidas:</strong> ${producto.medidas || ""}</li>
-            <li><strong>Materiales:</strong> ${producto.materiales || ""}</li>
-            <li><strong>Acabado:</strong> ${producto.acabado || ""}</li>
-            <li><strong>Peso:</strong> ${producto.peso || ""}</li>
-            <li><strong>Capacidad:</strong> ${producto.capacidad || ""}</li>
-            <li><strong>Categoría:</strong> ${producto.categoria}</li>
-          </ul>
-          <p class="precio">$${producto.precio.toLocaleString()}</p>
-          <button class="agregar-carrito">Agregar al carrito</button>
+        <div class="detalle-grid">
+          <div class="detalle-imagen-container">
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="detalle-img"/>
+          </div>
+          <div class="detalle-info-container">
+            <h2>${producto.nombre}</h2>
+            <p class="descripcion">${producto.descripcion}</p>
+            <ul class="detalle-specs">${specsList}</ul>
+            <div class="precio-accion">
+              <p class="precio">$${producto.precio.toLocaleString()}</p>
+              <button class="agregar-carrito" data-id="${producto.id}">Agregar al carrito</button>
+            </div>
+          </div>
         </div>
       `;
-
-      // 4. Evento para agregar al carrito
-      const botonCarrito = contenedor.querySelector(".agregar-carrito");
-      botonCarrito.addEventListener("click", () => {
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        const existe = carrito.find(item => item.id === producto.id);
-
-        if (!existe) {
-          carrito.push({ ...producto, cantidad: 1 });
-        } else {
-          existe.cantidad += 1;
-        }
-
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        actualizarContadorCarrito();
-        alert(`${producto.nombre} fue agregado al carrito 🛒`);
-      });
     } else {
       contenedor.innerHTML = `<p>Producto no encontrado 😢</p>`;
     }
   });
-
-  // 5. Actualizar el contador del carrito en el header
-  function actualizarContadorCarrito() {
-    const contador = document.getElementById("contador");
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    contador.textContent = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
-  }
-
-  // 6. Inicializar contador al cargar la página
-  actualizarContadorCarrito();
 });
