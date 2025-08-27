@@ -122,5 +122,17 @@ window.productos = [
     medidas: "220 × 90 × 80 cm",
     materiales: "Madera de eucalipto certificada FSC®, lino 100% natural",
     acabado: "Espuma HR + plumón reciclado"
+  },
+  {
+    id: 12,
+    nombre: "Cama Neuquén",
+    categoria: "camas",
+    precio: 200000,
+    imagen: "img/Cama Neuquén.png",
+    descripcion: "Cama plataforma con cabecero flotante tapizado en lino natural y estructura de madera maciza. Su diseño minimalista y sofisticado crea un ambiente de serenidad y elegancia, perfecto para dormitorios contemporáneos que buscan paz y simplicidad.",
+    medidas: "160 × 200 × 90 cm",
+    materiales: "Roble macizo certificada FSC®, tapizada de lino 100% natural",
+    acabado: "Aceite natural, tapizado premium y cabecero flotante acolchado . Compatible con colchón 160 × 200 "
   }
 ];
+
