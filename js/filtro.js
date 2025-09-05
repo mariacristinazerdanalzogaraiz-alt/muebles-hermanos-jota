@@ -22,11 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const productoDiv = document.createElement('div');
       productoDiv.classList.add('producto');
       productoDiv.innerHTML = `
-        <img src="${producto.imagen}" alt="${producto.nombre}">
-        <h4>${producto.nombre}</h4>
-        <p>${producto.descripcion}</p>
-        <p class="precio">$${producto.precio}</p>
-        <a href="detalle.html?id=${producto.id}" class="ver-mas">Ver más</a>
+        <a href="detalle.html?id=${producto.id}" class="producto-link">
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+          <h4>${producto.nombre}</h4>
+          <p>${producto.descripcion}</p>
+          <p class="precio">$${producto.precio}</p>
+        </a>
         <button class="agregar-carrito" data-id="${producto.id}">Agregar al carrito</button>
       `;
       productosContainer.appendChild(productoDiv);
