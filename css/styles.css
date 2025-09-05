@@ -1,5 +1,5 @@
 /* ------------------------------
-   PALETA DE COLORES
+    PALETA DE COLORES
 ------------------------------ */
 :root {
   --siena-tostado: #A0522D;
@@ -10,7 +10,7 @@
 }
 
 /* ------------------------------
-   TIPOGRAFÍA
+    TIPOGRAFÍA
 ------------------------------ */
 body {
   font-family: 'Inter', sans-serif;
@@ -36,7 +36,7 @@ p {
 }
 
 /* ------------------------------
-   HEADER
+    HEADER
 ------------------------------ */
 header {
   background-color: var(--alabastro-calido);
@@ -98,7 +98,7 @@ header {
 
 
 /* ------------------------------
-   PRODUCTOS
+    PRODUCTOS
 ------------------------------ */
 .productos-grid {
   display: grid;
@@ -125,6 +125,17 @@ header {
   flex-direction: column;
 }
 
+.producto-link {
+  text-decoration: none; 
+  color: inherit;        
+  display: block;         
+}
+
+.producto-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 .producto:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(160, 82, 45, 0.1);
@@ -134,6 +145,7 @@ header {
   width: 100%;
   height: auto;
   border-radius: 4px;
+  object-fit: cover;
 }
 
 .producto h4 {
@@ -147,17 +159,6 @@ header {
   margin-bottom: 1em;
 }
 
-.ver-mas {
-  margin-top: auto; 
-  padding-top: 1em; 
-  display: block;
-  text-decoration: none;
-  background-color: var(--rosa-polvoriento);
-  color: var(--alabastro-calido);
-  padding: 0.5em 1em;
-  border-radius: 4px; 
-  transition: background-color 0.3s ease;
-}
 
 .producto .agregar-carrito {
   background-color: var(--verde-salvia);
@@ -175,12 +176,9 @@ header {
   background-color: var(--siena-tostado);
 }
 
-.ver-mas:hover {
-  background-color: var(--siena-tostado);
-}
 
 /* ------------------------------
-   FILTROS
+    FILTROS
 ------------------------------ */
 .filtro-lista {
   list-style: none;
@@ -213,7 +211,7 @@ header {
 }
 
 /* ------------------------------
-   HERRAMIENTAS DE BÚSQUEDA (FILTRO Y BUSCADOR)
+    HERRAMIENTAS DE BÚSQUEDA (FILTRO Y BUSCADOR)
 ------------------------------ */
 .herramientas-busqueda {
   max-width: 800px;
@@ -253,7 +251,7 @@ header {
 }
 
 /* ------------------------------
-   SECCIONES DE TEXTO
+    SECCIONES DE TEXTO
 ------------------------------ */
 section {
   padding: 2em;
@@ -268,7 +266,7 @@ ul li {
 }
 
 /* ------------------------------
-   FOOTER
+    FOOTER
 ------------------------------ */
 footer {
   background-color: var(--verde-salvia);
@@ -281,8 +279,15 @@ footer {
   margin: 0.3em 0;
   font-size: 0.95em;
 }
+
+.footer-info a {
+  color: var(--alabastro-calido);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 /* ------------------------------
-   HERO CARRETE
+    HERO CARRETE
 ------------------------------ */
 .hero-carrete {
   position: relative;
@@ -331,12 +336,12 @@ footer {
 
 
 /* ------------------------------
-   CARRITO
+    CARRITO
 ------------------------------ */
 .carrito-container {
   max-width: 800px;
   margin: 2em auto;
-  padding: 2.5em;
+  padding: 2em;
   background-color: var(--alabastro-calido);
   border-radius: 8px;
   border: 1px solid var(--alabastro-calido);
@@ -349,22 +354,21 @@ footer {
   margin-bottom: 1.5em;
 }
 
-
-.producto-carrito {
+.carrito-container .producto {
   display: flex;
   align-items: center;
-  gap: 1.5em;
-  padding: 1.5em 0;
+  gap: 1em;
+  padding: 1em 0;
   border-bottom: 1px solid var(--rosa-polvoriento);
 }
 
-.producto-carrito:last-of-type {
+.carrito-container .producto:last-of-type {
   border-bottom: none;
 }
 
-.producto-carrito img {
-  width: 120px;
-  height: 120px;
+.carrito-container .producto img {
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -374,50 +378,54 @@ footer {
 }
 
 .producto-carrito-info h4 {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.3em 0;
+  font-size: 1rem;
 }
 
 .producto-carrito-info p {
   margin: 0.2em 0;
+  font-size: 0.9rem;
 }
 
 .acciones {
   display: flex;
-  gap: 0.5em;
-  margin-top: 1em;
+  gap: 0.4em;
   align-items: center;
 }
 
 .acciones button {
-  background-color: var(--verde-salvia);
-  color: white;
   border: none;
-  padding: 0.5em 0.8em;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s ease;
+  padding: 0.4em 0.6em;
+  font-size: 0.9rem;
 }
 
-.acciones button:hover {
+.acciones .incrementar,
+.acciones .decrementar {
+  background-color: var(--verde-salvia);
+  color: white;
+}
+
+.acciones .incrementar:hover,
+.acciones .decrementar:hover {
   background-color: var(--siena-tostado);
 }
 
 .acciones .eliminar {
   background-color: var(--rosa-polvoriento);
+  color: white;
 }
 
 .acciones .eliminar:hover {
-  background-color: var(--siena-tostado); 
-}
-
-.acciones .incrementar, .acciones .decrementar {
-  padding: 0.3em 0.7em; 
+  background-color: var(--siena-tostado);
 }
 
 #total {
   text-align: right;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 700;
   font-family: 'Playfair Display', serif;
   color: var(--siena-tostado);
@@ -429,14 +437,13 @@ footer {
 #vaciar-carrito {
   display: block;
   margin-left: auto;
-  margin-right: 0;
-  padding: 0.8em 1.5em;
+  padding: 0.6em 1.2em;
   background-color: var(--rosa-polvoriento);
   color: white;
   border: none;
   border-radius: 4px;
   font-family: 'Playfair Display', serif;
-  font-size: 1.1em;
+  font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
@@ -446,8 +453,9 @@ footer {
 #vaciar-carrito:hover {
   background-color: var(--siena-tostado);
 }
+
 /* ------------------------------
-   BOTONES?
+    NAVEGACIÓN
 ------------------------------ */
 .nav-list a {
   text-decoration: none;
@@ -481,7 +489,7 @@ footer {
 }
 
 /* ------------------------------
-   DETALLE DE PRODUCTO
+    DETALLE DE PRODUCTO
 ------------------------------ */
 
 .detalle-container {
@@ -553,7 +561,7 @@ footer {
 }
 
 /* ------------------------------
-   FORMULARIO
+    FORMULARIO
 ------------------------------ */
 .formulario-contacto {
   max-width: 700px;
@@ -643,7 +651,7 @@ footer {
 }
 
 /* ------------------------------
-   RESPONSIVE (TABLETS Y MÓVILES)
+    RESPONSIVE (TABLETS Y MÓVILES)
 ------------------------------ */
 @media (max-width: 768px) {
   /* --- Estilos Generales --- */
